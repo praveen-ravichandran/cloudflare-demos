@@ -3,7 +3,7 @@
  */
 
 /**
- * NanoID code picked from the library
+ * NanoID code picked from the library for Random Unique Code generation
  * Repo: https://github.com/ai/nanoid
  * Code Extracted from: https://cdn.jsdelivr.net/npm/nanoid/nanoid.js
  */
@@ -72,7 +72,7 @@ function buildResponse(responseData) {
 export default {
   async fetch(request, env, ctx) {
     const { pathname, searchParams } = new URL(request.url);
-    const { REDIRECTOR_STORE } = env;
+    const { REDIRECTOR_STORE } = env; // Create KV Store binding in the Worker's Settings section before running the code
     let responseData = {};
     
     if (pathname.startsWith('/api/')) {
